@@ -1,7 +1,6 @@
 from pydriller import RepositoryMining
 from func_lib import *
 
-#url=input("Plz enter the repository url:\n")
 url="https://github.com/signalapp/Signal-Server"
 #url = input("Pls enter url or path of the git project: ")
 
