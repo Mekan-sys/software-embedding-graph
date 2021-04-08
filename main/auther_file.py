@@ -5,7 +5,7 @@ import time
 #https://github.com/signalapp/Signal-Server
 url = input("Pls enter url or path of the git project: ")
 name = input("Pls enter name of the project: ")
-f= open(name+"_auther_file.txt","w")
+f= open("../graphs/"+name+"_auther_file.txt","w")
 
 t0= time.time()
 for commit in RepositoryMining(url).traverse_commits():

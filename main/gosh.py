@@ -9,7 +9,7 @@ import time
 
 #Building graph
 name = input("Pls enter name of the file: ")
-f= open(name+"_auther_file.txt","r")
+f= open("../graphs/"+name+"_auther_file.txt","r")
 
 
 auther_dict = {}
@@ -22,14 +22,27 @@ for x in f:
         index=index+1
 
     if(line[1] not in file_dict):
-        file_dict[line[0]] = index
+        file_dict[line[1]] = index
         index=index+1
 f.close()
 
 G = nx.Graph()
-f= open(name+"_auther_file.txt","r")
+f = open("../graphs/"+name+"_auther_file.txt","r")
+g = open("../graphs/"+name+"_gosh_auther_file.txt","w")
+idea=0
 for z in f:
-    line = x.split("#")
-    G.add_node(auther_dict.get(line[0]),type="auther")
-    G.add_node(file_dict.get(line[1]),type="file")
-    G.add_edge(auther_dict.get(line[0]),file_dict.get(line[1]))
+    line = z.split("#")
+#    G.add_node(auther_dict.get(line[0]),type="auther")
+#    G.add_node(file_dict.get(line[1]),type="file")
+    auther = auther_dict[line[0]]
+    file = file_dict[line[1]]
+    g.write(str(auther) + "  " + str(file) + "\n")
+    #g.write(auther_dict[line[0]] + "  " + file_dict[line[1]] + "\n")
+    #g.write("%s  %s\n" %(auther_dict[line[0]],file_dict[line[1]]))
+    #G.add_edge(auther_dict[line[0]],file_dict[line[1]])
+    idea= idea+1
+print(idea)
+f.close()
+g.close()
+
+print(nx.info(G))

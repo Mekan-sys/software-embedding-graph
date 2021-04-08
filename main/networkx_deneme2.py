@@ -1,3 +1,4 @@
+#Build a file to file graph which have edges between files that have modified by same user
 import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
