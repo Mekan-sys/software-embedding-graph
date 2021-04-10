@@ -37,11 +37,6 @@ for z in f:
     auther = auther_dict[line[0]]
     file = file_dict[line[1]]
     g.write(str(auther) + "  " + str(file) + "\n")
-    #g.write(auther_dict[line[0]] + "  " + file_dict[line[1]] + "\n")
-    #g.write("%s  %s\n" %(auther_dict[line[0]],file_dict[line[1]]))
-    #G.add_edge(auther_dict[line[0]],file_dict[line[1]])
-    idea= idea+1
-print(idea)
 f.close()
 g.close()
 
