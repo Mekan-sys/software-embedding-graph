@@ -1,0 +1,22 @@
+SOFTWARE GRAPHS
+Personal project: 53    /77
+Signal          : 761   /1556
+TenserFlow      : 29497 /141295
+
+SOCIALNETWORK GRAPHS
+Karate          : 34    /78
+Food            : 620   /2102
+Epinions        : 26588 /100120
+
+ROADNETWORK GRAPS
+Chesapeake      :39     /170
+Euroroad        :1417   /1174
+Luxembourg      :114599 /119666
+PA              :1087562/1541514
+
+BRAINNETWORK GRAPHS
+
+mouse           :1000   /1700
+human           :117000 /16.000.000
+
+BIOLOGICALNETWORK GRAPHS

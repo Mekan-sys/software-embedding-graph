@@ -96,3 +96,22 @@ Time elapsed for coloring the graph:  0.15043926239013672
 
 
 
+Pls enter name of the project: signal
+Name: 
+Type: Graph
+Number of nodes: 761
+Number of edges: 1556
+Average degree:   4.0894
+Time elapsed for partition:  23633.581916093826
+Community 6
+...
+Community 15
+Util.java
+, Mikkel Kroman
+Community 16
+Procfile
+, Alex Newman
+Time elapsed for drawing the graph:  0.005141019821166992
+Calculating modularity for undirected graph
+Modularity of such partition is 0.279
+Time elapsed for Modularity calculation:  12.202157735824585
