@@ -12,6 +12,7 @@ for x in f:
     G.add_node(y[0],type="auther")
     G.add_node(y[1],type="file")
     G.add_edge(*y)
+#
 
 degree_sequence = sorted([d for n, d in G.degree()], reverse=True)  # degree sequence
 degreeCount = collections.Counter(degree_sequence)
