@@ -1,23 +1,63 @@
 # %%
 import matplotlib.pyplot as plt
 import networkx as nx
-import collections
-import numpy as np
-
-
-# %%
-G = nx.Graph()
+import time
 #Building graph
-#name = input("Pls enter name of the project: ")
-#f= open("../../graphs/"+name+"_auther_file.txt","r")
-f= open("momo.edges","r")
-name="fb-pages-food"
+name = input("Pls enter name of the graph: ")
+loc = input("Pls enter location of the graph: ")
+G = nx.Graph(name=name)
+f= open(loc,"r")
 for x in f:
     y = x.split(" ")
-    G.add_node(y[0],type="auther")
-    G.add_node(y[1],type="file")
+    G.add_node(y[0])
+    G.add_node(y[1])
     G.add_edge(*y)
 print(nx.info(G))
+#%%
+print(nx.average_clustering(G)) 
+print(nx.average_degree_connectivity(G))
+
+#%%
+t0= time.time()
+print(nx.diameter(G))
+t1= time.time() - t0
+print("Time elapsed for diameter calculation: ", t1)
+
+#%%
+t0= time.time()
+print(nx.average_shortest_path_length(G))
+t1= time.time() - t0
+print("Time elapsed for Average Shortest Path Calculation: ", t1)
+
+
+#%%
+t0= time.time()
+print(nx.node_connectivity(G))
+t1= time.time() - t0
+print("Time elapsed for node connectivity: ", t1)
+
+#%%
+t0= time.time()
+print(nx.edge_connectivity(G))
+t1= time.time() - t0
+print("Time elapsed for edge connectivity: ", t1)
+
+t0= time.time()
+print(nx.average_node_connectivity(G))
+t1= time.time() - t0
+print("Time elapsed for average node connectivity: ", t1)
+#%%
+#Approximations
+from networkx.algorithms import approximation as approx
+t0= time.time()
+print(approx.node_connectivity(G))
+t1= time.time() - t0
+print("Time elapsed for average node connectivity approximation: ", t1)
+
+t0= time.time()
+print(approx.average_clustering(G))
+t1= time.time() - t0
+print("Time elapsed for average clustering approximation: ", t1)
 
 #%%
 #Page rank
@@ -40,6 +80,7 @@ plt.ylabel('Frequency')
 
 #%%
 #Distribution of Node Linkages (degree(log-log scale))
+import numpy as np
 def plot_degree_histogram(g, normalized=True):
     print("Creating histogram...")
     aux_y = nx.degree_histogram(g)
@@ -64,6 +105,7 @@ plot_degree_histogram(G)
 
 # %%
 #Degree distibution function of networkx
+import collections
 degree_sequence = sorted([d for n, d in G.degree()], reverse=True)  # degree sequence
 degreeCount = collections.Counter(degree_sequence)
 deg, cnt = zip(*degreeCount.items())
@@ -93,6 +135,7 @@ nx.diameter(G)
 #It is a measure of how connected nodes with certain degrees are.
 ##The k-mean degree connectivity is the average of the mean neighbor degrees of vertices of degree k.
 nx.average_degree_connectivity(G)
+sum(nx.average_degree_connectivity(G))
 #The average shortest path length is the sum of path lengths d(u,v) between all pairs of nodes 
 # (assuming the length is zero if v is not reachable from v) normalized by n*(n-1) where n is the number of nodes in G.
 nx.average_shortest_path_length(G)

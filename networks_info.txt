@@ -1,7 +1,7 @@
 SOFTWARE GRAPHS
 Personal project: 53    /77
 Signal          : 761   /1556
-TenserFlow      : 29497 /141295
+TensorFlow      : 29497 /141295
 
 SOCIALNETWORK GRAPHS
 Karate          : 34    /78
